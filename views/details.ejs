@@ -1,18 +1,30 @@
 <%- include('./partials/header') %>
-<figure>
-        <img src=<%=picture.url%> alt="">
-        </a>
-    <figcaption>
-        <p>
-            <%=picture.articlename%>
-        </p>
-        <p>
-            <%=picture.price%>
-        </p>
-        <p>
-            <%=picture.company%>
-        </p>
-    </figcaption>
 
+<section>
+    <div>
+<a href="/single/<%=picture.id%>/delete">Delete</a>
+<button onclick="toggleHide()">Edit User</button>
+</div>
+<div>           
+<figure>
+        <img src=<%=picture.url%> alt=""> </a>
+    <figcaption>
+        <p> <%=picture.articlename%> </p>
+        <p> <%=picture.price%>   </p>
+        <p> <%=picture.company%> </p>
+    </figcaption>
 </figure>
+</div>
+<div>
+<form class="hide" id="Form" action="/single/<%=picture.id%>/edit" method="POST">
+    <input type="text" name="articlename"  value="<%=picture.articlename%>">
+        <input type="text" name="url"  value="<%=picture.url%>">
+        <input type="text" name="company"  value="<%=picture.company%>">
+        <input type="text" name="price"  value="<%=picture.price%>">
+          <textarea name="description"  value="Write your article here..."></textarea>
+        <input type="submit" value="Add Product">
+    </form>
+    </div>
+</section>
+    <script src="/assets/js/main.js"></script>
 <%- include('./partials/footer') %>
