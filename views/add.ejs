@@ -1,0 +1,38 @@
+<%- include('./partials/header') %>
+<div class="add">
+    <h1>ADD A NEW PRODUCT</h1>
+    <img src="assets/css/Line.png" alt="">
+    <form action="/add-product" method="POST">
+    <input type="text" name="articlename"  placeholder="Product-Name">
+    <input type="text" name="url"  placeholder="Url-Picture">
+    <input type="text" name="company"  placeholder="Company">
+    <input type="text" name="price"  placeholder="Price">
+    <textarea name="description"  placeholder="Write your article here..."></textarea>
+    <input type="submit" value="Add Product">
+    </form>
+    <hr>
+    <h2>Random Products</h2>
+</div>
+<div class="gallery">
+    <% prudectData.forEach(picture => { %>
+        
+        <figure>
+            <a href="/single/<%=picture.id%>">
+                <img src=<%=picture.url%> alt="">
+                </a>
+            <figcaption>
+                <p>
+                    <%=picture.articlename%>
+                </p>
+                <p>
+                    <%=picture.price%>
+                </p>
+                <p>
+                    <%=picture.company%>
+                </p>
+            </figcaption>
+    
+        </figure>
+        <%})%>
+    </div>
+    <%- include('./partials/footer') %>
