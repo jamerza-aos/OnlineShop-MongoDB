@@ -1,30 +1,44 @@
-<%- include('./partials/header') %>
 
-<section>
-    <div>
-<a href="/single/<%=picture.id%>/delete">Delete</a>
-<button onclick="toggleHide()">Edit User</button>
-</div>
-<div>           
-<figure>
-        <img src=<%=picture.url%> alt=""> </a>
-    <figcaption>
-        <p> <%=picture.articlename%> </p>
-        <p> <%=picture.price%>   </p>
-        <p> <%=picture.company%> </p>
-    </figcaption>
-</figure>
-</div>
-<div>
-<form class="hide" id="Form" action="/single/<%=picture.id%>/edit" method="POST">
-    <input type="text" name="articlename"  value="<%=picture.articlename%>">
-        <input type="text" name="url"  value="<%=picture.url%>">
-        <input type="text" name="company"  value="<%=picture.company%>">
-        <input type="text" name="price"  value="<%=picture.price%>">
-          <textarea name="description"  value="Write your article here..."></textarea>
-        <input type="submit" value="Add Product">
-    </form>
+<%- include('./partials/header')%>
+<main class="detalis_product">
+<button id="btn" onclick="toggleHide()">Edit User</button>
+ <a id="delet" href="/single/<%=picture.id%>/delete">Delete</a>
+   <figure>
+   
+        <img src=<%=picture.url%> alt="">
+        </a>
+    <figcaption class="figc">
+        <div> 
+        <p>
+            <%=picture.articlename%>
+        </p>
+        <p>
+            <%=picture.company%>
+        </p>
     </div>
-</section>
-    <script src="/assets/js/main.js"></script>
-<%- include('./partials/footer') %>
+        <p id="price">
+            <%=picture.price%>
+
+        </p>
+    </figcaption>
+    <p id="description">
+        Product Description:
+        <br>
+        <%=picture.description%>
+
+    </p>
+    <button id="buy">BUY PRODUCT</button>
+
+</figure>
+
+<form action="/single/<%=picture.id%>/edit" method="POST" id="Form" class="hide">
+    <h2 id="edit_product">Edit Product</h2>
+    <input type="text" name="articlename"  placeholder="Product-Name" value="<%=picture.articlename%>">
+    <input type="text" name="url"  placeholder="Url-Picture" value="<%=picture.url%>">
+    <input type="text" name="brandname"  placeholder="Company" value="<%=picture.company%>">
+    <input type="text" name="price"  placeholder="Price" value="<%=picture.price%>">
+    <textarea name="description"  rows=6 placeholder="Write your article here..."><%=picture.description%></textarea>
+    <input type="submit" value="Edit Product">
+    </form>
+</main>
+<%- include('./partials/footer')%>

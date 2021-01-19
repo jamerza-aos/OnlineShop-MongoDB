@@ -1,3 +1,7 @@
+.hide{
+
+    display: none;
+}
 header{
     margin: 0 10%;    
 }
@@ -25,7 +29,6 @@ nav a{
     margin-bottom: 5%;
     
 }
-
 .add img
 {
     margin-bottom: 3%;
@@ -71,6 +74,88 @@ input:last-of-type:hover{
     cursor: pointer;
 }
 
-.hide{
-    display: none;
+
+
+.gallery{
+    padding: 7.5vh 10% 5vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.grid:nth-of-type(7n+1){
+    grid-column: 1/-1;
+}
+.figc{
+    display: flex;
+    justify-content: space-between;
+}
+.gallery img{
+    width: 100%;
+    opacity: .6;
+}
+.gallery img:hover{
+    opacity: 1;
+}
+.detalis_product{
+    margin: 0 auto;
+    align-items: center;
+    padding-left:5%;
+
+}
+#price{
+    margin-left: 5%;
+}
+#btn{
+    text-align: center;
+    padding: 10px 30px;
+    width: 150px;
+    margin-left: 2.2%;
+    border: 1px solid #323A45;
+    color: #323A45;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#delet{
+   
+    text-align: center;
+    padding: 8px 30px;
+    width: 250px;
+    border: 1px solid #323A45;
+    color: #323A45;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#edit_product{
+    text-align: center;
+    font-family: Karla;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+}
+#description{
+width: 878px;
+font-family: Karla;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+color: #323A45;
+}
+#buy{
+ background: #FFFFFF;
+border: 1px solid #323A45;
+box-sizing: border-box;
+border-radius: 2px;
+width: 11%;
+height: 5vh;
+text-align: center;
+margin-left: 80%;
+margin-bottom: 10%;
+
+
+}
+.footer{
+    text-align: center;
 }

@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/add', (req, res) => {
-    prudectItem.find().limit(6)
+    prudectItem.aggregate([{ $sample: { size: 6 } }])
     .then(result => {
         res.render('add', {prudectData: result})
     })
@@ -81,13 +81,6 @@ app.post('/single/:pictureId/edit',(req,res) => {
     .catch(err => console.log(err))
 })
 
-app.get('/Lessthan', (req, res) => {
-    // Match ist function 
-    prudectItem.aggregate([{ $match: { Price: { $lte: 30 } } }])
-        .then((result) => {
-            res.render("Lessthan", { prudectData: result });
-        })
-        .catch((err) => console.log(err));
-});
+
 
 
